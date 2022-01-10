@@ -1,0 +1,22 @@
+.hero {
+
+    &__image {
+        position: relative;
+        background-image: url("/images/bg-intro-mobile.svg"); //TODO
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        min-height: 17.5rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url("/images/image-mockups.png"); //TODO
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+}

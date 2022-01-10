@@ -1,0 +1,75 @@
+html {
+    font-size: 100%;               //lets user control zoom level on browser
+    box-sizing: border-box;        //size of elements include padding in the width, so the box width 100px includes the padding px
+}
+
+*, *::before, *::after {           //selects all the elements in an HTML page, their before and after
+    box-sizing: inherit;           //inherits the value from its parent element, which is the box-sizing from html
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Public Sans', sans-serif; //this is the font that is used when we linked the google font page
+    line-height: 1.3;              //spacing in-between lines
+    font-size: $font-med;           //relative units are better than pixels
+    color: $grayishBlue;
+
+    &.noScroll {
+        overflow: hidden;
+    }
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+// Spacing
+.container {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+}
+
+// Flexbox
+.flex {
+    display: flex;                 //display element determines how the rectangular box behaves
+                                   //flex indicates that the item will grow or shrink to fit the space in container
+
+    &-jc-sb {
+        justify-content: space-between;         //used to align the items on the main axis, spaces between each element
+    }
+
+    &-jc-c {
+        justify-content: center;            //used to align the items on the main axis, graviated towards center
+    }
+
+    &-ai-c {
+        align-items: center;         //used to align the items on the main axis
+    }
+}
+
+// Buttons
+button, .button {
+    padding: 0.875rem 2.1875rem;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border-radius: 50px;
+    border: 0;
+    color: white;
+    font-weight: 400;
+    cursor: pointer;                 //uses the cursor when you hover over it
+}
+
+// Visibility
+.hide-for-mobile {
+    // hide for tablet and mobile
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    // hide for desktop viewport widths
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
